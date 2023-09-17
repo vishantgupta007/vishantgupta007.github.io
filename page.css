@@ -487,12 +487,12 @@ main {
 		height: 10rem;
 	}
 
-	.toggle-mode {
+/* 	.toggle-mode {
 		padding: 0 30px;
 		position: absolute;
 		top: 30px;
 		left: 0px;
-	}
+	} */
 
 	.nav-links {
 		position: absolute;
@@ -564,11 +564,11 @@ main {
 	}
 }
 @media screen and (max-width: 475px) {
-	.toggle-mode {
+/* 	.toggle-mode {
 		position: absolute;
 		top: 30px;
 		left: 0px;
-	}
+	} */
 
 	.left-col h1 {
 		font-size: 28px;
