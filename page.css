@@ -148,7 +148,7 @@ button {
 .toggle-mode {
 	position: absolute;
 	top: 5%;
-	left: 30px;
+	right: 30px;
 }
 
 #black {
