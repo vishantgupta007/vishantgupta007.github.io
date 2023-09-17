@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Landing Page</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&family=Roboto:wght@300;400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="page.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+			integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+	</head>
+	<body>
+		<div class="overlay"></div>
+		<!-- For intro animation  -->
+		<div class="wrapper">
+			<header>
+				<a href="index.html" class="index">
+					<img src="logo.svg" alt="Fauxica logo" class="logo" />
+				</a>
+				<nav class="nav-links">
+					<ul>
+						<li><a href="index.html" class="active">Home</a></li>
+						<!--for active page class is given -->
+						<li><a href="index.html">Products</a></li>
+						<li><a href="index.html">Gallery</a></li>
+						<li><a href="index.html">Contact</a></li>
+					</ul>
+				</nav>
+
+				<button class="toggle-mode">
+					<i id="black" class="fas fa-moon" aria-label="dark-mode"></i>
+					<i id="light" class="fas fa-sun"></i>
+				</button>
+				<span class="bars"><i class="fa-solid fa-bars"></i></span>
+				<a class="cross"><i class="fa-solid fa-xmark"></i></a>
+			</header>
+			<main>
+				<div class="left-col">
+					<h1>Quality apparel without price tag</h1>
+					<p class="sub-head">
+						No need to spend $xxx on apparel just for the name's sake. Our
+						premium material is made from the same stuff.
+					</p>
+					<div class="cta-btns">
+						<a href="#" class="primary-cta">Browse our collection</a>
+						<a href="#" class="secondary-cta">
+							<span>Spring '23 collection</span>
+							<span class="fas fa-arrow-right" id="arrow"></span>
+						</a>
+					</div>
+					<div class="news">
+						<p class="employees">50K</p>
+						<p class="details">
+							We're proud to announce that we employ a workforce of over
+							<strong>50,000</strong>. It's all possible because of you.
+						</p>
+					</div>
+				</div>
+				<div class="right-col">
+					<div class="card card-1">
+						<div class="cards-details">
+							<div>
+								<a href="#" class="product-title">Fauxica Shoes</a>
+								<p>Running Shoes</p>
+							</div>
+							<p class="product-price">$49</p>
+						</div>
+					</div>
+					<div class="card card-2">
+						<div class="cards-details">
+							<div>
+								<a href="#" class="product-title">Fauxica Wear</a>
+								<p>Denim Jackets</p>
+							</div>
+							<p class="product-price">$69</p>
+						</div>
+					</div>
+					<div class="card card-3">
+						<div class="cards-details">
+							<div>
+								<a href="#" class="product-title">Fauxica Clothing</a>
+								<p>Cotton Fabric</p>
+							</div>
+							<p class="product-price">$89</p>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+		<div class="copyright">
+			<p> &copy; 2023, Fauxica's all rights are reserved </p>
+		</div>
+		<script src="page.js"></script>
+	</body>
+</html>

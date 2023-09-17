@@ -1,0 +1,619 @@
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	--background-color: #f4f4f4;
+	--head-bg-color: rgb(195, 181, 181);
+	--nav-box-shadow: rgb(170, 161, 161);
+	--nav-title-color: rgb(134, 98, 98);
+	--underline-color: rgb(206, 46, 46);
+	--text-color: #333;
+	--text-highlight-color: rgb(72, 57, 98);
+	--spring-bg-color: rgb(72, 57, 98);
+	--border-color: #333;
+	--collection-bg-color: #f1e2d1;
+	--collection-hover-color: #e2d1bd;
+	--employee-color: rgb(190, 61, 59);
+	--news-bg-color: #f4f4f4;
+	--cards-detail-bg-color: #ffffffa1;
+	--product-detail-color: rgb(30, 67, 131);
+	--product-para-color: rgb(43, 54, 73);
+	--product-price-color: rgb(207, 19, 19);
+	--nav-hover-color: rgb(163, 69, 35);
+	--overlay-color: #fff;
+	--transition-delay: 0.5s;
+
+	background-color: var(--background-color);
+	margin: 0;
+	min-height: 100vh;
+	font-family: "Poppins", sans-serif;
+	transition: var(--transition-delay);
+}
+
+body.dark {
+	--background-color: #333;
+	--head-bg-color: #666060;
+	--nav-box-shadow: rgb(239, 202, 202);
+	--nav-title-color: rgb(239, 229, 229);
+	--underline-color: rgb(231, 113, 113);
+	--text-color: #eadbdb;
+	--text-highlight-color: rgb(72, 57, 98);
+	--spring-bg-color: rgb(203, 185, 235);
+	--border-color: #e2d3d3;
+	--collection-bg-color: #e6c6a1;
+	--collection-hover-color: #efc9ec;
+	--employee-color: rgb(236, 121, 119);
+	--news-bg-color: #2a1e1ea9;
+	--cards-detail-bg-color: #dda7a7a8;
+	--product-detail-color: rgb(42, 64, 104);
+	--product-para-color: rgb(43, 54, 73);
+	--product-price-color: rgb(207, 19, 19);
+	--nav-hover-color: rgba(223, 200, 197, 0.95);
+	--overlay-color: #fff;
+}
+
+.wrapper {
+	width: 90vw; /*to provide the max width to the page */
+	margin: 20em auto;
+	position: relative;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+}
+
+/* NAVBAR */
+/* to provide the flex display to the header */
+header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	box-shadow: 5px 5px 5px 0px var(--nav-box-shadow);
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	width: 1366px;
+	z-index: 1000;
+	background: var(--head-bg-color);
+}
+.nav-links {
+	/* display: flex; */
+	/* flex-direction: column;  */
+	margin: 4em;
+}
+
+.nav-links ul {
+	display: flex;
+	list-style: none;
+	justify-content: flex-end; /*to provide the gap between nav btns */
+	gap: 4em;
+	margin-left: 350px;
+	padding-left: 0;
+}
+
+.nav-links a {
+	text-decoration: none;
+	color: var(--nav-title-color);
+	text-transform: uppercase;
+	font-size: 1.8rem;
+	font-family: "Montserrat", sans-serif;
+	letter-spacing: 1.5px;
+	font-weight: 600;
+	position: relative;
+}
+
+/* Adding that half underline beneath the home title using active */
+.nav-links a.active::before {
+	position: absolute;
+	content: "";
+	width: 35%;
+	height: 2px;
+	bottom: -5px;
+	border-bottom: 2px solid var(--underline-color);
+}
+
+/* For Adding Hover effect on navbars */
+.nav-links a::before {
+	position: absolute;
+	content: "";
+	width: 0%;
+	height: 2px;
+	bottom: -5px;
+	border-bottom: 2px solid var(--underline-color);
+	transition: all 300ms ease;
+}
+
+button {
+	background: transparent;
+	font-size: 2.5rem;
+	border: none;
+	cursor: pointer;
+	transition: opacity 300ms ease-in-out;
+}
+
+.toggle-mode {
+	position: absolute;
+	top: 00px;
+	right: 30px;
+}
+
+#black {
+	color: rgb(21, 11, 117);
+	opacity: 1;
+}
+
+.dark #black {
+	opacity: 0;
+}
+
+#light {
+	color: rgb(243, 171, 156);
+	opacity: 0;
+}
+
+.dark #light {
+	opacity: 1;
+}
+
+.bars {
+	font-size: 22px;
+	color: var(--border-color);
+	display: none;
+	cursor: pointer;
+}
+.cross {
+	font-size: 24px;
+	color: var(--border-color);
+	position: absolute;
+	top: 40px;
+	right: 30px;
+	cursor: pointer;
+	display: none;
+}
+
+.nav-links.open-menu {
+	right: -50px;
+	transition: all 300ms;
+}
+
+/* MAIN SECTION  */
+/* LEFT-COl.  */
+
+main {
+	display: flex;
+	gap: 4em;
+	margin-top: 10em;
+}
+
+.left-col {
+	width: 45%;
+}
+h1 {
+	font-size: 5.2rem;
+	font-family: "Playfair Display", serif;
+	margin: 0px;
+	font-weight: normal;
+	color: var(--text-color);
+}
+
+.sub-head {
+	text-justify: auto;
+}
+
+.left-col .sub-head {
+	color: var(--text-color);
+}
+.sub-head {
+	font-size: 1.8rem;
+}
+
+.cta-btns {
+	display: flex;
+	gap: 2em;
+}
+
+.primary-cta {
+	background: var(--collection-bg-color);
+	color: var(--text-highlight-color);
+	font-weight: 500;
+	letter-spacing: 1px;
+	border-radius: 1.9rem;
+	border-radius: 1.9rem;
+	padding: 1.5em 1.5em;
+	text-align: center;
+	font-size: 2rem;
+	transition: all 300ms ease;
+}
+.secondary-cta {
+	position: relative;
+	font-size: 1.8rem;
+	color: var(--spring-bg-color);
+	margin: auto 0;
+	letter-spacing: 1px;
+	transition: all 300ms ease;
+}
+#arrow {
+	transition: all 200ms ease;
+}
+
+.primary-cta,
+.secondary-cta {
+	text-decoration: none;
+}
+
+.news {
+	display: flex;
+	gap: 5em;
+	margin-top: 6em;
+	border: 1px solid var(--border-color);
+	color: var(--text-color);
+	font-weight: 500;
+	padding: 4em;
+	border-radius: 1rem;
+	position: relative;
+	background: var(--news-bg-color);
+}
+.news::before {
+	content: "";
+	background: url(confetti.svg);
+	position: absolute;
+	height: 10em;
+	width: 15em;
+	top: -20px;
+	left: -40px;
+	z-index: 2;
+	animation: popper 800ms ease-in-out infinite normal;
+}
+
+.employees {
+	font-size: 4rem;
+	margin-top: 0.5em;
+	line-height: 100%;
+	color: var(--employee-color);
+}
+
+.details {
+	font-size: 1.8rem;
+	letter-spacing: 0.8px;
+}
+
+/* Right Section  */
+
+.right-col {
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	flex-grow: 1;
+	gap: 2.3em;
+	grid-template-areas:
+		"left right"
+		"left bottom";
+}
+
+.card {
+	display: flex;
+	align-items: end;
+	justify-content: center;
+	border-radius: 8px;
+	background-size: 150%;
+	transition: transform 400ms ease;
+	transform: scale(1);
+	color: var(--text-highlight-color);
+}
+
+.card:hover {
+	transform: scale(1.1);
+}
+.card-1 {
+	grid-area: left;
+	background: url(clothing3.jpg) no-repeat center center/cover;
+	position: relative;
+}
+
+/* For tag  */
+.card-1::before {
+	content: "";
+	position: absolute;
+	background: url(tag.svg);
+	height: 140px;
+	width: 180px;
+	top: 0px;
+	left: -70px;
+}
+
+.card-2 {
+	grid-area: right;
+	background: url(clothing2.jpg) no-repeat center center/cover;
+}
+.card-3 {
+	grid-area: bottom;
+	background: url(clothing1.jpg) no-repeat center center/cover;
+}
+
+.cards-details {
+	display: flex;
+	gap: 4em;
+	background: var(--cards-detail-bg-color);
+	margin-bottom: 2em;
+	padding: 1.5em;
+	border-radius: 12px;
+	font-size: 1.3rem;
+	align-items: center;
+	transition: transform 600ms ease;
+}
+
+.cards-details a {
+	letter-spacing: 0.8px;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 1.8rem;
+	color: var(--product-detail-color);
+}
+
+.product-title ~ p {
+	margin: 0;
+	letter-spacing: 0.8px;
+	font-size: 1.5rem;
+	color: var(--product-para-color);
+}
+
+.product-price {
+	font-size: 1.8rem;
+	margin: 0;
+	color: var(--product-price-color);
+}
+
+/* Copyright */
+
+.copyright {
+	color: var(--background-color);
+	font-size: 12px;
+	text-align: center;
+	height: 20px;
+	background-color: var(--border-color);
+	margin-bottom: 2rem;
+}
+
+
+/* Animation Effect */
+.nav-links a:hover::before,
+.nav-links a:hover {
+	width: 50%;
+	color: var(--nav-hover-color);
+}
+
+.primary-cta:hover {
+	background: var(--collection-hover-color);
+	cursor: pointer;
+}
+
+.secondary-cta:hover #arrow {
+	transform: translateX(10px); /*For arrow effect */
+}
+
+.cards:hover {
+	background-size: 200%;
+}
+
+.cards-details:hover {
+	transform: translateY(-10px);
+	cursor: pointer;
+}
+
+/* Animation intro  */
+.overlay {
+	position: absolute;
+	z-index: 999;
+	background: var(--overlay-color);
+	animation: reveal 1500ms forwards ease;
+	width: 100%;
+	height: 150%;
+	transform-origin: bottom;
+}
+
+@keyframes reveal {
+	from {
+		transform: scaleY(1);
+	}
+
+	to {
+		transform: scaleY(0);
+	}
+}
+
+/* Animation For poppers of 50K */
+
+@keyframes popper {
+	0% {
+		transform: translateY(-20px);
+	}
+	10% {
+		transform: translateY(-17.5px);
+	}
+	25% {
+		transform: translateY(-15px);
+	}
+	40% {
+		transform: translateY(-12.5px);
+	}
+	65% {
+		transform: translateY(-10.5px);
+	}
+	80% {
+		transform: translateY(-8px);
+	}
+	90% {
+		transform: translateY(-5px);
+	}
+
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+/* To animate the main section to grow */
+
+main {
+	animation: growin 2000ms forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+	transform: scale(0.4);
+}
+
+@keyframes growin {
+	to {
+		transform: scale(1);
+	}
+}
+
+@media (max-width: 1150px) {
+	header {
+		/* position: relative; */
+		top: 0%;
+		width: 100%;
+		margin: 0 auto;
+		padding: 0 50px;
+		height: 10rem;
+	}
+
+	.toggle-mode {
+		padding: 0 30px;
+		position: absolute;
+		top: 30px;
+		left: 0px;
+	}
+
+	.nav-links {
+		position: absolute;
+		top: 0%;
+		right: -400px;
+		width: 300px;
+		height: 100vh;
+		background-color: var(--head-bg-color);
+		padding: 50px 0 0 10px;
+		transition: var(--transition);
+		/* box-shadow: -31px 31px 31px 2px var(--border-color); */
+	}
+
+	.nav-links ul {
+		margin: 1em 0;
+		flex-direction: column;
+		padding: 0 30px;
+		align-items: flex-start;
+		z-index: 99;
+	}
+
+	.bars {
+		display: block;
+		position: fixed;
+		top: 40px;
+		right: 30px;
+	}
+
+	main {
+		flex-direction: column;
+	}
+	.left-col {
+		width: 100%;
+	}
+
+	.left-col h1 {
+		text-align: center;
+		font-size: 34px;
+	}
+	.sub-head {
+		/* font-size: 18px; */
+		text-align: center;
+	}
+
+	.cta-btns {
+		flex-direction: column;
+
+		margin: 5rem auto;
+		width: 50%;
+	}
+	.secondary-cta {
+		margin: 0 auto;
+	}
+
+	.right-col {
+		display: grid;
+		grid-template-columns: 100%;
+		/* flex-grow: 1; */
+		gap: 2.3em;
+		grid-template-areas:
+			"left left"
+			"right right"
+			"bottom bottom";
+	}
+	.card {
+		width: 80%;
+		height: 50vh;
+		margin: 0 auto;
+	}
+}
+@media screen and (max-width: 475px) {
+	.toggle-mode {
+		position: absolute;
+		top: 30px;
+		left: 0px;
+	}
+
+	.left-col h1 {
+		font-size: 28px;
+		font-weight: 700;
+	}
+
+	.sub-head {
+		font-size: 18px;
+		text-align: center;
+	}
+	.cta-btns {
+		width: 100%;
+	}
+
+	.primary-cta {
+		padding: 1.5em 0.5em;
+		font-size: 1.1rem;
+	}
+
+	.secondary-cta {
+		font-size: 16px;
+	}
+	.news {
+		flex-direction: column;
+		gap: 0.3em;
+	}
+
+	.employees {
+		font-size: 2.8rem;
+		margin-top: 0em;
+	}
+	.details {
+		font-size: 1.5rem;
+	}
+	.cards-details {
+		font-size: 0.5rem;
+	}
+
+	.card {
+		width: 80%;
+		height: 30vh;
+		margin: 0 auto;
+	}
+
+	.copyright {
+		font-size: 14px;
+	}
+}
